@@ -101,5 +101,5 @@ Estructuras de Control:
 Una estructura de control permite la toma de decisiones y la repetición de las acciones
 de un programa, para ello existen unas sentencias de control o instrucciones:
 
-***CONDICIONALES:
+###CONDICIONALES:
 
