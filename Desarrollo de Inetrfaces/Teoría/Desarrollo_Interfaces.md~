@@ -11,23 +11,18 @@ Precedida de la expresión Console, existen una serie de métodos que permiten
 interrelacionarse con la pantalla, de todos los métodos existentes destacan 
 cuatro:
 
-	Console.Write()
 
-+ Permite escribir datos en la consola, y no se produce salto de carro del cursor.
 
-	Console.WriteLine()
++ Console.Write() = Permite escribir datos en la consola, y no se produce salto de carro del cursor.
 
-+ Escribe la información en la console y produce un salto de linea. No se utiliza 
+
++ Console.WriteLine() = Escribe la información en la console y produce un salto de linea. No se utiliza 
   para visualizar literales, para eso se utiliza el último.
 
-	Console.Read()
-
-+ Detiene la ejecución de un programa y espera a que el usuario introduzca datos que 
++ Console.Read() = Detiene la ejecución de un programa y espera a que el usuario introduzca datos que 
   se asignan a una variable. NO se produce salto de carro.
 
-	Console.ReadLine()
-
-+ Igual que el anterior pero con salto de carro.
++ Console.ReadLine() = Igual que el anterior pero con salto de carro.
 
 Para visualizar el contenido de una variable, una de las formas que se puede utilizar son 
 los marcadores de posición, que consiste en hacer una numeración entre llaves, empezando 
@@ -87,7 +82,7 @@ multiplicación y división:
         	Console.WriteLine("La multiplicacion es: {0}", multiplicacion)
 
         	division = a / b
-        	'para truncar un decimal a dos numeros se pone math.Round(variable,nº decimales) donde se quiera que			 aparezca la division'
+        	'para truncar un decimal a dos numeros se pone math.Round(variable,nº decimales) donde se quiera que		     aparezca la division'
        		Console.WriteLine("La division es: {0}", Math.Round(division, 2))
         	Console.Read()
 
@@ -101,5 +96,103 @@ Estructuras de Control:
 Una estructura de control permite la toma de decisiones y la repetición de las acciones
 de un programa, para ello existen unas sentencias de control o instrucciones:
 
-***CONDICIONALES:
+###CONDICIONALES:
 
+####Sintaxis:
+
+Estructura condicional simple:
+
+	If condicion Then
+
+		Instrucciones
+	
+	End If
+
+
+Estructura condicional doble:
+
+	If condicion Then
+ 
+		Instrucicones
+
+	Else
+	
+		Instrucciones 
+
+	End If
+
+Estructura de control anidada:
+
+	If condicion Then
+		
+		Instrucciones
+
+	Else If condicion Then
+
+		Instrucciones
+
+	End If
+
+Ejer4:
+
+Realizar un proyecto que creando un menú de cuatro opciones, me visualice que opción se ha 
+pulsado:
+
+	Module Module1
+    	 Sub Main()
+        	Dim opcion As Integer
+        	Console.WriteLine("Opción 1")
+        	Console.WriteLine("Opción 2")
+        	Console.WriteLine("Opción 3")
+        	Console.WriteLine("Opción 4")
+        	Console.Write("¿Qué opción desea pulsar? ")
+        	opcion = Console.ReadLine()
+        	If opcion = 1 Then
+            		Console.WriteLine()
+           		Console.WriteLine("Has pulsado la primera opción")
+            		Console.Read()
+        	End If
+        	If opcion = 2 Then
+            		Console.WriteLine()
+            		Console.WriteLine("Has pulsado la segunda opción")
+            		Console.Read()
+        	End If
+        	If opcion = 3 Then
+            		Console.WriteLine()
+            		Console.WriteLine("Has pulsado la tercera opción")
+            		Console.Read()
+        	End If
+        	If opcion = 4 Then
+            		Console.WriteLine()
+            		Console.WriteLine("Has pulsado la cuarta opción")
+            		Console.Read()
+       		End If
+   	 End Sub
+	End Module
+	
+Condicionales múltiples:
+
+	Select case variable
+
+		Case opc1
+
+			Instrucciones
+
+		Case opc2
+
+			Instrucciones
+
+		Case opc3
+
+			
+			Instrucciones
+		
+		Case Else 'cualquier otra opción'
+
+			Instrucciones
+
+		End Case
+
+Para las opciones case se pueden poner varias opciones en uno mismo separados por comas, si se pone To,
+por ejemplo 2 To 4, es un rango que va del 2 al 4.
+		
