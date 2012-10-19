@@ -183,7 +183,6 @@ Condicionales múltiples:
 			Instrucciones
 
 		Case opc3
-
 			
 			Instrucciones
 		
@@ -196,3 +195,72 @@ Condicionales múltiples:
 Para las opciones case se pueden poner varias opciones en uno mismo separados por comas, si se pone To,
 por ejemplo 2 To 4, es un rango que va del 2 al 4.
 		
+Ejer5:
+Realizar un ejercicio que introduciendo por teclado una nota entera, me visualice en letra la 
+calificación:
+
+	Module Module1
+
+   	 Sub Main()
+        	Dim nota As Integer
+        	Console.Write("Escriba la nota del alumno: ")
+        	nota = Console.ReadLine()
+        	Select Case nota
+            		Case 1 To 3
+                		Console.WriteLine()
+                		Console.WriteLine("Nota: Muy insuficionete (1-3)")
+                		Console.Read()
+           		Case 1 To 5
+                		Console.WriteLine()
+                		Console.WriteLine("Nota: Insuficiente (3 - 5)")
+               			Console.Read()
+            		Case 5
+                		Console.WriteLine()
+                		Console.WriteLine("Nota: Suficiente (5)")
+                		Console.Read()
+            		Case 6
+                		Console.WriteLine()
+                		Console.WriteLine("Nota: Bien (6)")
+                		Console.Read()
+            		Case 7, 8
+                		Console.WriteLine()
+               		 	Console.WriteLine("Nota: Notable (7-8)")
+                		Console.Read()
+            		Case 9, 10
+                		Console.WriteLine()
+                	Console.WriteLine("Nota: Sobresaliente (9-10)")
+               		Console.Read()
+        	End Select
+
+    	 End Sub
+
+	End Module
+
+Estructuras repetitivas:
+-----------------------
+
+####For ... Next: 
+
+Estructura repetitiva que de antemano se sabe el número de  veces que se va
+a realizar. 
+
+#####Sintaxis:
+
+	For variablecontrol = valorinicial To valorfinal [Step salto(valor ++/--]
+		
+		Instrucciones 
+	
+	Next variablecontrol
+
+Si no se pone Step es de uno en uno. Ejemplo:
+
+
+	For a = 1 To 10 [Step 1]
+	
+		Console.WriteLine("{0}", a);
+
+	Next a
+
+Para salir de un For se pone la condición de salida, o se escribe Exit For evitando 
+que se ejecute hasta el final. Los For pueden estar anidados.
+
