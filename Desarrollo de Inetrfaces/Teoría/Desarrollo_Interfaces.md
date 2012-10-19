@@ -370,6 +370,7 @@ Se utiliza para captura Exceptions (Excepciones) o controlar posibles errores. S
 Ejer8:
 
 Con el ejercicio anterior haz un try…catch para controlar posibles excepciones:
+
 	Module Module1
 
 		Sub Main()
@@ -380,7 +381,7 @@ Con el ejercicio anterior haz un try…catch para controlar posibles excepciones:
        	 		Dim cnd As Integer
 
         		Console.WriteLine()
-  			Console.WriteLine("Introduzca números por teclado, para hayar     la  suma total, media aritmética y el mayor de ellos.")
+  			Console.WriteLine("Introduzca números por teclado, para hayar la  suma total, media aritmética y el mayor de ellos.")
 
         		Do
             			Try
@@ -412,6 +413,7 @@ Con el ejercicio anterior haz un try…catch para controlar posibles excepciones:
 
 
 ESTRUCTURAS DE DATOS:
+--------------------
 En muchas ocasiones es necesario asignar mas de un valor a una variable, por lo que es necesario utilizar alguna Estructura interna que permita guardar esos datos y poder gestionarlos. Existen dos estructuras internas:
 Array: Es una estructura interna que permite guardar datos del mismo tipo en una única variable. Para hacer referencia a esos datos se utilizan uno o varios índices según la dimensión. .Net acepta hasta 32 dimensiones en un solo Array. Para definir un Array en .Net se utiliza la siguiente sintaxis:
 Vectores o tablas unidimensionales:
@@ -425,7 +427,7 @@ Dim Tab () As Integer = {listaValores}
 Ejemple: Dim Notas () As Integer = {5, 4, 8, 7, 6}
 La dimensión es el número de elementos que tenga la listaValores, si se quieren dar más posiciones de los que se necesitan se ponen ceros.
 
-Ejer9 (para el lunes):
+Ejer9:
 
 Realizar un programa que permita introducir las calificaciones de cinco participantes en un concurso de cocina de tal manera que deberá aparecer cual es la puntuación más alta y a que numero de participante pertenece, la puntuación más baja y a que numero de participante pertenece y la nota media.
 Deberá existir una opción de salir preguntando si se desea salir o no. Utilizando try…catch.
