@@ -421,7 +421,7 @@ denominado triangulo, y terminando con un saludo final diseñado en otro procedim
        		Console.WriteLine("Gracias por utilizar la aplicación.")
 
    	End Sub
- !I!9
+ 
     	Sub Main()
 
         	Console.WriteLine("*APLICAICÓN*")
@@ -435,7 +435,7 @@ denominado triangulo, y terminando con un saludo final diseñado en otro procedim
 
        End Module
 
-+ Funciones (Function): Es un procedimiento o subprograma especial, que sirve para estructurar
+Funciones (Function): Es un procedimiento o subprograma especial, que sirve para estructurar
 codigo. Tiene de especial, que la función (el propio nombre de la función), actua como una 
 variable, es decir, una función devuelce un valor.
 
@@ -453,7 +453,7 @@ Para poder devolver un valor basta con poner el nombre de la funcion o opcionalm
 
 ya que nom_funcion se puede utilizar como si fuese una variable.
 
-+ Parámetro: Un parametro es un valor, que se puede transmitir entre diferentes procedimientos o funciones. Los datos que se transmiten se denominan parametros.
+Parámetro: Un parametro es un valor, que se puede transmitir entre diferentes procedimientos o funciones. Los datos que se transmiten se denominan parametros.
 Los parametros actuales son los que se definen en el procedimiento llamado y los parametros formales son los que se declaran en el llamador.
 Los parametros actuales, pueden ser de dos tipos, dependiendo de la posibilidad de que los valores originales, es decir, los parametros formales, puedan ser modificacdos en el procedimiento llamador. Existen por tanto dos tipos:
 Paso por valor: Se expresa con ByVal, que hace que los parametros originales no cambien en cuanto a su valor, es el valor por defecto.
@@ -481,27 +481,49 @@ End Module
 
 Ejer15:
 
-Realizar un ejercicio, utilizando un menu, que me permita calcular el area del triangulo, cuadrado, circunferencia y salida, utilizando unicamente procedimientos o funciones con parametros.
+Realizar un ejercicio, utilizando un menu, que me permita calcular el area del triangulo,
+cuadrado, circunferencia y salida, utilizando unicamente procedimientos o funciones 
+con parametros.
 
 
 DISEÑO DE CLASES:
+-----------------
+
 Para definir una clase en .Net se necesita:
-1. Creación de la clase: Para ello se utiliza la sintaxis class nomClase, en su interior se pone el conjunto de atributos y métodos, terminando con End Class.
-2. Es necesario generar una variable especial, que cuando se define, se crea una instancia que permite, a partir de ese momento poder utilizar esta clase. Esta instancia utiliza la palabra reservada new. 
+
++ Creación de la clase: Para ello se utiliza la sintaxis class nomClase, en su interior 
+se pone el conjunto de atributos y métodos, terminando con End Class.
+
++ Es necesario generar una variable especial, que cuando se define, se crea una instancia 
+que permite, a partir de ese momento poder utilizar esta clase. Esta instancia utiliza la 
+palabra reservada new. 
+
 Existen tres formatos para realizar o definir una instancia:
-a. Dim nomVar As nomClase 
-nomVar = new nomClase ()
-b. Dim nomVar As nomClase = new nomClase ()
-c. Dim nomVar As new nomClase ()
-3. Una vez definidos los métodos, en tercer lugar se podrá acceder a los elementos de la clase, bastara con poner la variable de la instancia seguida con un punto (igual que structure).
+
+	Dim nomVar As nomClase
+	nomVar = new nomClase ()
+
+
+ 	Dim nomVar As nomClase = new nomClase ()
+
+
+	Dim nomVar As new nomClase ()
+
++ Una vez definidos los métodos, en tercer lugar se podrá acceder a los elementos de la
+clase, bastara con poner la variable de la instancia seguida con un punto (igual 
+que structure).
 
 Ejercicio Class:
-Realizar un programa que introduciendo por teclado los datos de una agenda (nom, apel, tel, dir), me permita visualizarlos utilizando una clase:
-Module Module1
-    Class Agenda
-        Public nom, apel, dir As String
-        Public num As Integer
-        Sub introducirDatos()
+
+Realizar un programa que introduciendo por teclado los datos de una agenda (nom, apel, 
+tel, dir), me permita visualizarlos utilizando una clase:
+
+	Module Module1
+
+    	 Class Agenda
+         Public nom, apel, dir As String
+         Public num As Integer
+         Sub introducirDatos()
             Try
                 Console.WriteLine("Nombre del contacto: ")
                 nom = Console.ReadLine()
@@ -520,25 +542,25 @@ Module Module1
                 Console.WriteLine("Se ha producido un error.")
                 introducirDatos()
             End Try
-        End Sub
-        Sub mostrar()
+         End Sub
+         Sub mostrar()
             Console.Clear()
             Console.WriteLine("Nombre: {0}", nom)
             Console.WriteLine("Apellido: {0}", apel)
             Console.WriteLine("Teléfono: {0}", num)
             Console.WriteLine("Dirección: {0}", dir)
             Console.Read()
+         End Sub
+        End Class
+        Sub Main()
+            Dim var As Agenda = New Agenda
+
+            var.introducirDatos()
+            var.mostrar()
+            Console.ReadLine()
         End Sub
-    End Class
-    Sub Main()
-        Dim var As Agenda = New Agenda
 
-        var.introducirDatos()
-        var.mostrar()
-        Console.ReadLine()
-    End Sub
-
-End Module
+       End Module
 
 Ejercicio ClassCalculos:
 Realizar un programa que utilizando una clase que incorporara un menú con una serie de opciones, como son calcular el area del triangulo, cuadrado, rombo y circunferencia, cuyos cálculos deberán ser programados en otra clase.
