@@ -189,7 +189,7 @@ Con el ejercicio anterior haz un try…catch para controlar posibles excepciones:
 
 
 ESTRUCTURAS DE DATOS:
---------------------
+---------------------
 
 En muchas ocasiones es necesario asignar mas de un valor a una variable, por lo que es necesario 
 utilizar alguna Estructura interna que permita guardar esos datos y poder gestionarlos. Existen 
@@ -357,81 +357,103 @@ Hacer una agenda, con nombre, teléfono, dirección y nivel de amistad, con tres e
 Para utilizar varias estructuras seria (ejemplo):
 
 	Structure Fecha
+
 		Dim dia as Integer
+
 	End Structure
 
 
 
 	Structure Libros
+
 		Dim aut as String
 		Dim fecha_publicacion as Fecha
+
 	End Structure
+
 Fecha tiene que estar declarada obligatoriamente antes que libros.
 
 Para utilizarla en el main seria:
 
 	var(i).fecha_publicacion.dia = 23
 
-Esto se puede hacer las veces que queramos
-. 
+Esto se puede hacer las veces que queramos.
+
+
 SUBPROGRAMAS, PROCEDIMIENTOS Y FUNCIONES:
 ----------------------------------------
 
-Un subprograma o procedimiento, representado por sub, es una forma de organizar código por bloques que tiene la característica de que no puede devolver ningún valor tras los cálculos. 
-Para poder llamar a un procedimiento basta con poner nombreProc (), cuando acaba el procedimiento, el procedimiento que llama sigue con la línea siguiente. El que llama al procedimiento es el nombrado llamador y el otro se denomina llamado.
++ Subprograma o procedimiento: Un subprograma o procedimiento, representado por sub, es una forma de organizar código por
+bloques que tiene la característica de que no puede devolver ningún valor tras los
+cálculos. 
+Para poder llamar a un procedimiento basta con poner nombreProc (), cuando acaba el procedimiento, 
+el procedimiento que llama sigue con la línea siguiente. El que llama al procedimiento es el 
+nombrado llamador y el otro se denomina llamado.
+
 Ejer12:
-Realizar un programa, que calcule el área de un triangulo, utilizando un procedimiento denominado triangulo, y terminando con un saludo final diseñado en otro procedimiento.
-Module Module1
 
-    Sub Triangulo()
+Realizar un programa, que calcule el área de un triangulo, utilizando un procedimiento 
+denominado triangulo, y terminando con un saludo final diseñado en otro procedimiento.
 
-        Dim base, altura, result As Double
+	Module Module1
 
-        Console.WriteLine()
-        Console.WriteLine("Introducir la base del triángulo: ")
-        base = Console.ReadLine()
-        Console.WriteLine()
-        Console.WriteLine("Introducir la altura del triangulo: ")
-        altura = Console.ReadLine()
-        Console.WriteLine()
+    	 Sub Triangulo()
 
-        result = base * altura / 2
+         	Dim base, altura, result As Double
 
-        Console.WriteLine("El área del triángulo es {0}", Math.Round(result, 2))
-        Console.WriteLine()
+        	Console.WriteLine()
+        	Console.WriteLine("Introducir la base del triángulo: ")
+        	base = Console.ReadLine()
+        	Console.WriteLine()
+        	Console.WriteLine("Introducir la altura del triangulo: ")
+        	altura = Console.ReadLine()
+        	Console.WriteLine()
 
-    End Sub
-    Sub Saludo()
+        	result = base * altura / 2
 
-        Console.WriteLine("Ejecución finalizada.")
-        Console.WriteLine("Gracias por utilizar la aplicación.")
+        	Console.WriteLine("El área del triángulo es {0}", Math.Round(result, 2))
+        	Console.WriteLine()
 
-    End Sub
+    	 End Sub
+    	 Sub Saludo()
 
-    Sub Main()
+        	Console.WriteLine("Ejecución finalizada.")
+       		Console.WriteLine("Gracias por utilizar la aplicación.")
 
-        Console.WriteLine("*APLICAICÓN*")
-        Console.WriteLine("Inicio de la aplicación.")
-        Triangulo()
-        Console.WriteLine()
-        Saludo()
-        Console.Read()
+   	End Sub
+ !I!9
+    	Sub Main()
 
-    End Sub
+        	Console.WriteLine("*APLICAICÓN*")
+        	Console.WriteLine("Inicio de la aplicación.")
+        	Triangulo()
+        	Console.WriteLine()
+        	Saludo()
+        	Console.Read()
 
-End Module
-Funciones (Function): Es un procedimiento o subprograma especial, que sirve para estructurar codigo. Tiene de especial, que la función (el propio nombre de la función), actua como una variable, es decir, una función devuelce un valor. Sintaxis:
+    	End Sub
 
-Function nom_funcion (parametros separados por comas si hay mas de uno) As tipoDatoDev
-____
-____
-____
+       End Module
 
-End function
++ Funciones (Function): Es un procedimiento o subprograma especial, que sirve para estructurar
+codigo. Tiene de especial, que la función (el propio nombre de la función), actua como una 
+variable, es decir, una función devuelce un valor.
 
-Para poder devolver un valor basta con poner el nombre de la funcion o opcionalmente return nom_funcion, ya que nom_funcion se puede utilizar como si fuese una variable.
+Sintaxis:
 
-Un parametro es un valor, que se puede transmitir entre diferentes procedimientos o funciones. Los datos que se transmiten se denominan parametros.
+	Function nom_funcion (parametros separados por comas si hay mas de uno) As tipoDatoDev
+
+		Instrucciones
+
+	End function
+
+Para poder devolver un valor basta con poner el nombre de la funcion o opcionalmente: 
+
+	return nom_funcion
+
+ya que nom_funcion se puede utilizar como si fuese una variable.
+
++ Parámetro: Un parametro es un valor, que se puede transmitir entre diferentes procedimientos o funciones. Los datos que se transmiten se denominan parametros.
 Los parametros actuales son los que se definen en el procedimiento llamado y los parametros formales son los que se declaran en el llamador.
 Los parametros actuales, pueden ser de dos tipos, dependiendo de la posibilidad de que los valores originales, es decir, los parametros formales, puedan ser modificacdos en el procedimiento llamador. Existen por tanto dos tipos:
 Paso por valor: Se expresa con ByVal, que hace que los parametros originales no cambien en cuanto a su valor, es el valor por defecto.
