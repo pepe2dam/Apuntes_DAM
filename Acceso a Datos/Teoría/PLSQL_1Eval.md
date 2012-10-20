@@ -21,8 +21,7 @@ Desde el entorno de SQLPLUS podremos trabajar con:
 + Subprogramas (programas y funciones).
 + Paquetes.
 
-IDENTIFICADORES:
-----------------
+###IDENTIFICADORES:
 
 Se utilizan para nombrar los objetos que intervienen en un programa: variables, 
 constantes, cursores, excepciones, procedimientos, funciones, etc. En PL/SQL deben
@@ -33,5 +32,4 @@ cumplir las siguientes características:
 + Los restantes caracteres deben ser alfanuméricos o signos admitidos (letras,
   dígitos, '$', '#' y '_').
 
-DECLARACIÓN Y UTILIZACIÓN DE VARIABLES:
----------------------------------------
+###DECLARACIÓN Y UTILIZACIÓN DE VARIABLES:
