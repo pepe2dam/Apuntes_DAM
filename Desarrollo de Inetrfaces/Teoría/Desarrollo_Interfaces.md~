@@ -1,240 +1,3 @@
-Desarrollo de Interfaces
-========================
-
-Parte 3. Manejo de Consola
---------------------------
-
-Clase console:
--------------
-
-Precedida de la expresión Console, existen una serie de métodos que permiten 
-interrelacionarse con la pantalla, de todos los métodos existentes destacan 
-cuatro:
-
-
-
-+ Console.Write() = Permite escribir datos en la consola, y no se produce salto de carro del cursor.
-
-
-+ Console.WriteLine() = Escribe la información en la console y produce un salto de linea. No se utiliza 
-  para visualizar literales, para eso se utiliza el último.
-
-+ Console.Read() = Detiene la ejecución de un programa y espera a que el usuario introduzca datos que 
-  se asignan a una variable. NO se produce salto de carro.
-
-+ Console.ReadLine() = Igual que el anterior pero con salto de carro.
-
-Para visualizar el contenido de una variable, una de las formas que se puede utilizar son 
-los marcadores de posición, que consiste en hacer una numeración entre llaves, empezando 
-por cero, de las variables que se quieren visualizar, ejemplo:
-
-	Console.WriteLine("El número es {0}", a)
-
-Lo que hay detrás de la coma es la lista de variables, y lo que va entre llaves es la lista,
-como haciendo un link a cada variable.
-
-Ejer2:
-
-Realizar un ejercicio que introduzca por teclado mi nombre y la edad y la visualiza 
-por pantalla:
-
-	Module Module1
-		Sub Main()
-			Dim nombre As String 
-			Dim edad As Integer
-			Console.Write("Introduce tu nombre: ")
-			nombre = Console.ReadLine()
-			Console.Write("Introduce tu edad: ")
-			edad = Console.ReadLine()
-			Console.WriteLine("El nombre y la edad son: {0}, {1} años", nombre, edad)
-			Console.Read()
-		End Sub
-	End Module
-
-Ejer3:
-
-Realizar un proyecto que me pida dos números por teclado, visualizando la suma, resta, 
-multiplicación y división:
-
-	Module Module1
-
-   	 Sub Main()
-        	Dim a As Integer
-        	Dim b As Integer
-        	Dim suma As Integer
-       		Dim resta As Integer
-       		Dim multiplicacion As Integer
-        	Dim division As Double
-
-        	Console.Write("Escriba el primer número: ")
-        	a = Console.ReadLine()
-        	Console.Write("Escriba el segundo número: ")
-        	b = Console.ReadLine()
-
-        	Console.WriteLine()
-       		suma = a + b
-       		Console.WriteLine("La suma es: {0}", suma)
-
-        	resta = (a) - (b)
-        	Console.WriteLine("La resta es: {0}", resta)
-
-        	multiplicacion = a * b
-        	Console.WriteLine("La multiplicacion es: {0}", multiplicacion)
-
-        	division = a / b
-        	'para truncar un decimal a dos numeros se pone math.Round(variable,nº decimales) donde se quiera que		     aparezca la division'
-       		Console.WriteLine("La division es: {0}", Math.Round(division, 2))
-        	Console.Read()
-
-   	 End Sub
-
-	End Module
-
-Estructuras de Control:
-----------------------
-
-Una estructura de control permite la toma de decisiones y la repetición de las acciones
-de un programa, para ello existen unas sentencias de control o instrucciones:
-
-###CONDICIONALES:
-
-####Sintaxis:
-
-Estructura condicional simple:
-
-	If condicion Then
-
-		Instrucciones
-	
-	End If
-
-
-Estructura condicional doble:
-
-	If condicion Then
- 
-		Instrucicones
-
-	Else
-	
-		Instrucciones 
-
-	End If
-
-Estructura de control anidada:
-
-	If condicion Then
-		
-		Instrucciones
-
-	Else If condicion Then
-
-		Instrucciones
-
-	End If
-
-Ejer4:
-
-Realizar un proyecto que creando un menú de cuatro opciones, me visualice que opción se ha 
-pulsado:
-
-	Module Module1
-    	 Sub Main()
-        	Dim opcion As Integer
-        	Console.WriteLine("Opción 1")
-        	Console.WriteLine("Opción 2")
-        	Console.WriteLine("Opción 3")
-        	Console.WriteLine("Opción 4")
-        	Console.Write("¿Qué opción desea pulsar? ")
-        	opcion = Console.ReadLine()
-        	If opcion = 1 Then
-            		Console.WriteLine()
-           		Console.WriteLine("Has pulsado la primera opción")
-            		Console.Read()
-        	End If
-        	If opcion = 2 Then
-            		Console.WriteLine()
-            		Console.WriteLine("Has pulsado la segunda opción")
-            		Console.Read()
-        	End If
-        	If opcion = 3 Then
-            		Console.WriteLine()
-            		Console.WriteLine("Has pulsado la tercera opción")
-            		Console.Read()
-        	End If
-        	If opcion = 4 Then
-            		Console.WriteLine()
-            		Console.WriteLine("Has pulsado la cuarta opción")
-            		Console.Read()
-       		End If
-   	 End Sub
-	End Module
-	
-Condicionales múltiples:
-
-	Select case variable
-
-		Case opc1
-
-			Instrucciones
-
-		Case opc2
-
-			Instrucciones
-
-		Case opc3
-			
-			Instrucciones
-		
-		Case Else 'cualquier otra opción'
-
-			Instrucciones
-
-		End Case
-
-Para las opciones case se pueden poner varias opciones en uno mismo separados por comas, si se pone To,
-por ejemplo 2 To 4, es un rango que va del 2 al 4.
-		
-Ejer5:
-Realizar un ejercicio que introduciendo por teclado una nota entera, me visualice en letra la 
-calificación:
-
-	Module Module1
-
-   	 Sub Main()
-        	Dim nota As Integer
-        	Console.Write("Escriba la nota del alumno: ")
-        	nota = Console.ReadLine()
-        	Select Case nota
-            		Case 1 To 3
-                		Console.WriteLine()
-                		Console.WriteLine("Nota: Muy insuficionete (1-3)")
-                		Console.Read()
-           		Case 1 To 5
-                		Console.WriteLine()
-                		Console.WriteLine("Nota: Insuficiente (3 - 5)")
-               			Console.Read()
-            		Case 5
-                		Console.WriteLine()
-                		Console.WriteLine("Nota: Suficiente (5)")
-                		Console.Read()
-            		Case 6
-                		Console.WriteLine()
-                		Console.WriteLine("Nota: Bien (6)")
-                		Console.Read()
-            		Case 7, 8
-                		Console.WriteLine()
-               		 	Console.WriteLine("Nota: Notable (7-8)")
-                		Console.Read()
-            		Case 9, 10
-                		Console.WriteLine()
-                	Console.WriteLine("Nota: Sobresaliente (9-10)")
-               		Console.Read()
-        	End Select
-
-    	 End Sub
-
-	End Module
 
 Estructuras repetitivas:
 -----------------------
@@ -277,7 +40,7 @@ Realizar un programa que aparezcan todas las tablas de multiplicar del o al 10:
         		For i As Integer = 0 To 10
             			Console.WriteLine()
             			Console.WriteLine("Tabla del {0}", i)
-            			Console.WriteLine("-----------")
+            			Console.WriteLine("-------------")
             			Console.WriteLine()
             			For j As Integer = 0 To 10
                 			res = i * j
@@ -292,21 +55,34 @@ Realizar un programa que aparezcan todas las tablas de multiplicar del o al 10:
 
 ####While… End While: 
 
-Consiste en repetir una o un grupo de acciones mientras la condición sea verdadera. Para salir de un While se hace de dos formas, cumpliendo la condición del While o poniendo Exit While.
+Consiste en repetir una o un grupo de acciones mientras la condición sea verdadera. Para 
+salir de un While se hace de dos formas, cumpliendo la condición del While o poniendo
+Exit While.
 
 ####Do… Loop (Loop = Bucle): 
 
 Es una estructura repetitiva que tiene cuatro posibles sintaxis:
 
-+ Do While condición… Loop: Realiza una o un grupo de acciones mientras la condición sea cierta, es equivalente al While… End While.
-+ Do… Loop While condición: Realiza una o un grupo de acciones mientras la condición sea cierta, con la diferencia de la anterior de que esta realiza la acción al menos una vez. Se usa cuando se necesite (al menos se ejecute una vez el código).
-+ Do Until condición… Loop: Realiza una o un bucle de acciones hasta que la condición sea cierta. 
-+ Do… Loop Until condición: Realiza una o un grupo de acciones hasta que la condición sea cierta, se diferencia de la anterior en que al menos las acciones se ejecutan una vez.
-Do… Loop tiene Exit Loop como el While para salir.
++ Do While condición… Loop: Realiza una o un grupo de acciones mientras la condición 
+sea cierta, es equivalente al While… End While.
+
++ Do… Loop While condición: Realiza una o un grupo de acciones mientras la condición sea 
+cierta, con la diferencia de la anterior de que esta realiza la acción al menos una vez. 
+Se usa cuando se necesite (al menos se ejecute una vez el código).
+
++ Do Until condición… Loop: Realiza una o un bucle de acciones hasta que la condición sea 
+cierta. 
+
++ Do… Loop Until condición: Realiza una o un grupo de acciones hasta que la condición sea 
+cierta, se diferencia de la anterior en que al menos las acciones se ejecutan una vez.
+
++Do… Loop tiene Exit Loop como el While para salir.
 
 Ejer7: 
 
-Realizar una aplicación que me permita introducir números por teclado y visualice cuantos números se han introducido, la suma total de ellos, su media aritmética y cuál es el mayor. La condición de salida será pulsar lo que el programador estime necesario.
+Realizar una aplicación que me permita introducir números por teclado y visualice cuantos 
+números se han introducido, la suma total de ellos, su media aritmética y cuál es el mayor. 
+La condición desalida será pulsar lo que el programador estime necesario.
 
 	Module Module1
 
@@ -370,6 +146,7 @@ Se utiliza para captura Exceptions (Excepciones) o controlar posibles errores. S
 Ejer8:
 
 Con el ejercicio anterior haz un try…catch para controlar posibles excepciones:
+
 	Module Module1
 
 		Sub Main()
@@ -380,7 +157,7 @@ Con el ejercicio anterior haz un try…catch para controlar posibles excepciones:
        	 		Dim cnd As Integer
 
         		Console.WriteLine()
-  			Console.WriteLine("Introduzca números por teclado, para hayar     la  suma total, media aritmética y el mayor de ellos.")
+  			Console.WriteLine("Introduzca números por teclado, para hayar la  suma total, media aritmética y el mayor de ellos.")
 
         		Do
             			Try
@@ -412,87 +189,129 @@ Con el ejercicio anterior haz un try…catch para controlar posibles excepciones:
 
 
 ESTRUCTURAS DE DATOS:
+--------------------
+
 En muchas ocasiones es necesario asignar mas de un valor a una variable, por lo que es necesario utilizar alguna Estructura interna que permita guardar esos datos y poder gestionarlos. Existen dos estructuras internas:
-Array: Es una estructura interna que permite guardar datos del mismo tipo en una única variable. Para hacer referencia a esos datos se utilizan uno o varios índices según la dimensión. .Net acepta hasta 32 dimensiones en un solo Array. Para definir un Array en .Net se utiliza la siguiente sintaxis:
-Vectores o tablas unidimensionales:
-Dim nomTab (longitud) As tipo
+
++ Array: Es una estructura interna que permite guardar datos del mismo tipo en una única variable. Para hacer referencia a esos datos se utilizan uno o varios índices según la dimensión. .Net acepta hasta 32 dimensiones en un solo Array. Para definir un Array en .Net se utiliza la siguiente sintaxis:
+
++ Vectores o tablas unidimensionales:
+
+	Dim nomTab (longitud) As tipo
+
 Empieza en 0 y tiene una posición mas de lo que se declara en la longitud.
+
 Para introducir valores seria:
-nomTab (posición) = valor
-Ejemplo: Dim Dinero (7) As Integer
+
+	nomTab (posición) = valor
+
+Ejemplo:
+
+	Dim Dinero (7) As Integer
+
 Existe la posibilidad de inicializar un Array en el momento de declararlo, siendo así:
-Dim Tab () As Integer = {listaValores}
-Ejemple: Dim Notas () As Integer = {5, 4, 8, 7, 6}
+
+	Dim Tab () As Integer = {listaValores}
+
+Ejemplo:
+ 
+	Dim Notas () As Integer = {5, 4, 8, 7, 6}
+
 La dimensión es el número de elementos que tenga la listaValores, si se quieren dar más posiciones de los que se necesitan se ponen ceros.
 
-Ejer9 (para el lunes):
+Ejer9:
 
 Realizar un programa que permita introducir las calificaciones de cinco participantes en un concurso de cocina de tal manera que deberá aparecer cual es la puntuación más alta y a que numero de participante pertenece, la puntuación más baja y a que numero de participante pertenece y la nota media.
 Deberá existir una opción de salir preguntando si se desea salir o no. Utilizando try…catch.
 
-Matrices o Arrays bidireccionales: Tienen dos índices, que se haría de la siguiente forma:
-Dim Tab (7, 3) As Integer
++ Matrices o Arrays bidireccionales: Tienen dos índices, que se haría de la siguiente forma:
+
+	Dim Tab (7, 3) As Integer
+
 El primer número son las filas y el segundo número son las columnas.
+
 No se pueden inicializar directamente. 
-Poliedros o Arrays Tridimensionales.
-Arrays Paralelos: En muchas ocasiones, tenemos la necesidad de utilizar Arrays con diferentes tipos de datos (numéricos y de cadena), esto es imposible en una matriz, por lo que es aconsejable utilizar el concepto de Array Paralelo que consiste en utilizar varios vectores, gestionados a la par, es decir, gestionando el mismo índice de todos los Arrays.
 
-Estructuras (Structure): Es un Array especial en el sentido de que permite diferente tipos de datos a la hora de almacenarlos, a diferencia de los Arrays que solo permiten datos con los que se declara.
+#####Poliedros o Arrays Tridimensionales.
+
++ Arrays Paralelos: En muchas ocasiones, tenemos la necesidad de utilizar Arrays con diferentes tipos de datos (numéricos y de cadena), esto es imposible en una matriz, por lo que es aconsejable utilizar el concepto de Array Paralelo que consiste en utilizar varios vectores, gestionados a la par, es decir, gestionando el mismo índice de todos los Arrays.
+
++ Estructuras (Structure): Es un Array especial en el sentido de que permite diferente tipos de datos a la hora de almacenarlos, a diferencia de los Arrays que solo permiten datos con los que se declara.
+
 Una estructura se define con Structure… End Structure.
+
 Una estructura está formada por dos partes:
+
 Definir la propia estructura que se realizara justo antes del sub main(), fuera del sub Main(). Sintaxis:
-Structure nombre
-	Dim…
-	Dim…
-	…
-End Structure
-Sub Main ()
-End sub
+
+	Structure nombre
+		Dim…
+		Dim…
+		…
+	End Structure
+	Sub Main ()
+
+		Código
+
+	End sub
+
 Definir una variable especial del tipo nombre de la Estructura con la que voy a poder acceder a todas las variables, para poder leer y/o escribir en ellos. Si se define fuera del main, sirve para todo el proyecto y es: Public nomVar As nomStruct.
+
 Cuando se declara en el main, seria local, siendo: Dim nomVar As nomStruct.
-Para utilizarla seria: nomVar.nomVarStruc = “ “
+
+Para utilizarla seria: 
+
+	nomVar.nomVarStruc = “ “
+
 Ejemplo Ejer10Estr:
-Module Module1
-    Structure Libro
-        Dim titulo As String
-        Dim Autor As String
-        Dim Editorial As String
-        Dim Año As Integer
-    End Structure
 
-    Sub Main()
-        Dim libr As Libro
-        libr.titulo = "El Quijote"
-        libr.Autor = "Cervantes"
-        libr.Editorial = "Santillana"
-        libr.Año = 1580
+	Module Module1
+    		Structure Libro
+        		Dim titulo As String
+        		Dim Autor As String
+       	 		Dim Editorial As String
+        		Dim Año As Integer
+    		End Structure
 
-        Console.WriteLine("Los datos son: {0}, {1}, {2}, {3}", libr.titulo, libr.Autor, libr.Editorial, libr.Año)
-        Console.ReadLine()
-    End Sub
+    		Sub Main()
+        		Dim libr As Libro
+        		libr.titulo = "El Quijote"
+        		libr.Autor = "Cervantes"
+        		libr.Editorial = "Santillana"
+        		libr.Año = 1580
 
-End Module
+        		Console.WriteLine("Los datos son: {0}, {1}, {2}, {3}", libr.titulo, libr.Autor, libr.Editorial, libr.Año)
+        		Console.ReadLine()
+    		End Sub
+
+	End Module
 
 Para poder guardar más de un dato será necesario dimensionar la variable estructura de la siguiente forma:
-Dim nomVar(dimensión) As nomEstr
-Para referirse a un registro seria:
-nomVar(0).nomVarEstr = “ “ 
-Ejer11:
-Hacer una agenda, con nombre, teléfono, dirección y nivel de amistad, con tres entradas y visualizar.
-Module Module1
-    Structure Agenda
-        Dim nombre As String
-        Dim telef As Integer
-        Dim amis As Integer
-    End Structure
 
-    Sub Main()
-        Dim agn(2) As Agenda
-        Dim i As Integer
-        Try
-            Console.WriteLine("*APLICACIÓN")
-            Console.WriteLine()
-            'introduccion de valores en la estructura
+	Dim nomVar(dimensión) As nomEstr
+
+Para referirse a un registro seria:
+
+	nomVar(0).nomVarEstr = “ “
+ 
+Ejer11:
+
+Hacer una agenda, con nombre, teléfono, dirección y nivel de amistad, con tres entradas y visualizar.
+
+	Module Module1
+    	 Structure Agenda
+        	Dim nombre As String
+        	Dim telef As Integer
+        	Dim amis As Integer
+   	 End Structure
+
+    	 Sub Main()
+        	Dim agn(2) As Agenda
+        	Dim i As Integer
+        	Try
+            		Console.WriteLine("*APLICACIÓN")
+            		Console.WriteLine()
+            'introduccion de valores en la estructura'
             For i = 0 To 2
 
                 Console.WriteLine("Nombre del amigo {0}:", i + 1)
@@ -503,7 +322,7 @@ Module Module1
                 agn(i).amis = Console.ReadLine()
 
             Next
-            'visualizacion de los valores de la estructura
+            'visualizacion de los valores de la estructura'
             For i = 0 To 2
                 Console.WriteLine("Amigo {0}-> Nombre: {1}, Telefono: {2}, Amistad: {3}", i + 1, agn(i).nombre, agn(i).telef, agn(i).amis)
             Next
