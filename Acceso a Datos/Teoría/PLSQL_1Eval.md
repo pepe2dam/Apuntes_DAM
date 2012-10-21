@@ -60,3 +60,17 @@ sean del mismo tipo que otros objetos ya definidos.
 + %TYPE: Declara una variable del mismo tipo que otra o que una columna de una 
 tabla. Su formato es: nombre_variable nombre_objeto%TYPE;
 Ejemplo:
+
+	Total Importe€TYPE;
+
+	nombre_moroso clientes.nombre%TYPE;
+
++ %ROWTYPE: Declara una variable de registro cuyos campos se corresponden con columnas
+  de una tabla o vista de la base de datos.
+Ejemplo:
+
+	Moroso clientes%ROWTYPE;
+
+###ESTRUCTURAS DE CONTROL ALTERNATIVAS:
+
+

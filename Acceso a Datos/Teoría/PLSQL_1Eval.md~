@@ -33,3 +33,30 @@ cumplir las siguientes características:
   dígitos, '$', '#' y '_').
 
 ###DECLARACIÓN Y UTILIZACIÓN DE VARIABLES:
+
+Todas las variables PL/SQL deben declararse en la sección declarativa antes de su uso.
+El formato génerico para declarar una variable es el siguiente:
+
+	nombre_variable TIPO [NOT NULL] [{:=|DEFAULT} valor];
+
++ DEFAULT | := : Sritven para asignar valores por defecto a la variable desde el 
+  momento de su creación.
+
++ NOT NULL: Fuerza a la variable a tener siempre un valor. 
+
+Ejemplo:
+
+	DECLARE 
+		Importe NUMBER(8,2);
+		Contador NUMBER(2,0):=0;
+		Nombre NUMBER(20) NOT NULL DEFAULT 'miguel';
+
+###USO DE LOS ATRIBUTOS '%TYPE' Y '%ROWTYPE':
+
+En lugar de indicar explícitamente el tipo y la longitud de una variable existe la 
+posibilidad de utilizar los atributos %TYPE y %ROWTYPE para declarar variables que 
+sean del mismo tipo que otros objetos ya definidos.
+
++ %TYPE: Declara una variable del mismo tipo que otra o que una columna de una 
+tabla. Su formato es: nombre_variable nombre_objeto%TYPE;
+Ejemplo:
