@@ -90,3 +90,58 @@ Ejemplo:
 		END IF;
 
 + Alternativa doble:
+
+
+
+
+
+
+
+
+
+###DISPARADORES DE ACTUALIZACION:
+
+Son asociados a vistas. Solo se lanzan con instead of, en vez de after o before.
+Por este motivo se denominan disparadores de sustitución. El formato es el 
+siguiente:
+
+	CREATE [OR REPLACE] TRIGGER nombretrigger
+	INSTEAD OF {DELETE|INSERT|UPDATE|OF
+	<lista_columnas>}
+	ON nombre_vista
+	[FOR EACH ROW][WHEN condición]
+
+
+1. Solamente se utilizan en triggers asociados a vistas, y son especialmente utiles para realizar operaciones de actualizaciones complejas.
+2. Son especialmente utiles para realizar operaciones de actualización.
+3. Actuan siempre a nivel de fila, y la opción por omisión es FOR EACH ROW.
+
+Con la siguiente vista:
+
+	CREATE OR REPLACE VIEW emplead
+	AS
+  	SELECT emp_no,
+    		apellido,
+    		oficio,
+    		dnombre,
+    		loc
+ 	FROM EMPLE,
+    	DEPART
+ 	WHERE emple.dept_no = depart.dept_no;
+	
+
+Insercción en la vista:
+
+	INSERT INTO emplead VALUES (7819,'Martinez', 'Vendedor', 'Contabilidad', 'Sevilla');
+
+Da error por lo que se crea el siguiente trigger:
+
+	CREATE OR REPLACE TRIGGER t_ges_emplead INSTEAD OF
+  	  DELETE OR
+  	  INSERT OR
+  	  UPDATE ON emplead FOR EACH ROW DECLARE v_dept depart.dept_no%TYPE;
+  	BEGIN
+    	  IF deleting THEN
+          DELETE FROM emple WHERE 
+
+	
