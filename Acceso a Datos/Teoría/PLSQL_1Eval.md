@@ -69,22 +69,24 @@ Ejemplo:
   de una tabla o vista de la base de datos.
 Ejemplo:
 
-	Moroso clientes%ROWTYPE;
+		Moroso clientes%ROWTYPE;
 
 ###ESTRUCTURAS DE CONTROL ALTERNATIVAS:
 
 + Alternativa simple:
 
-	IF condicion THEN 
-		Instrucciones 
-	END IF;
+		IF condicion THEN 
+
+			Instrucciones 
+
+		END IF;
 
 Ejemplo:
 
-	IF num_empleados = 0 THEN
+		IF num_empleados = 0 THEN
 	
-		num_empleados:=num_empleados+15;
+			num_empleados:=num_empleados+15;
 	
-	END IF;
+		END IF;
 
 + Alternativa doble:
