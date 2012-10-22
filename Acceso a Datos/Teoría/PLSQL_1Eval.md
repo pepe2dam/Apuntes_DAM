@@ -173,3 +173,14 @@ Da error por lo que se crea el siguiente trigger:
 	
 
 	
+Ejercicio:
+
+Disponemos de la vista:
+
+	CREATE VIEW departam AS 
+	SELECT depart.dept_no, loc,count(emp_no) tot_emple FROM emple, depart
+	WHERE depart.dept_no = emple.dept_no GROUP BY depart.dept_no,dnombre,loc;
+
+Crear un disparador que permita reañizar actualizaciones en la tabla depart 
+a partir de la vista creada, contemplandose insert, delete, update.
+
