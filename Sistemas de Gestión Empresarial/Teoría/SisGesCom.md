@@ -70,4 +70,4 @@ Para introducir un logo a la empresa (en formatos .ico y .jpg), es necesario ir 
 Otra forma de meter iconos es con el selector de imágenes, que es un lugar donde
 metemos imágenes, con la ruta para cargarla, se suele utilizar para los productos.
 
-
+###Rol:
