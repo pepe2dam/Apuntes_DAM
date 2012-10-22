@@ -1,0 +1,39 @@
+SISTEMAS DE GESTIÓN COMERCIAL
+=============================
+
+
+Apuntes nuevos(22.10.2012):
+
+Openbravo:
+----------
+
+Creación de la Empresa:
+
++ Nombre: La Violeta
++ Contraseña: violeta
+
+####Creación de la empresa:
+
+1. Configuración general. 
+2. Entidad.
+3. Crear entidad
+
+#####Entidad
+
+Cuando el campo es amarillo es un campo obligatorio, cuando el
+fondo es blanco, significa que no es obligatorio, y por último
+cuando el texto es negro y el fondo amarillo, se dice que son 
+campos indexados, es decir, se utilizan para búsquedas.
+
+#####Contabilidad:
+
+Se tiene que seleccionar el Plan General de Contabilidad, de 
+cada país, según en el que se trabaje.
+
+####Dimensiones Contables:
+
+Según el cliente, se elegiran unas opciones de verificación.
+
+Por ultimo se valida la creación de la empresa.
+
+
