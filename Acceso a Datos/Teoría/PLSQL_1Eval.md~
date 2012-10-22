@@ -73,4 +73,18 @@ Ejemplo:
 
 ###ESTRUCTURAS DE CONTROL ALTERNATIVAS:
 
++ Alternativa simple:
 
+	IF condicion THEN 
+		Instrucciones 
+	END IF;
+
+Ejemplo:
+
+	IF num_empleados = 0 THEN
+	
+		num_empleados:=num_empleados+15;
+	
+	END IF;
+
++ Alternativa doble:

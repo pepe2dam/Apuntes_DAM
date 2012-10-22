@@ -61,9 +61,9 @@ sean del mismo tipo que otros objetos ya definidos.
 tabla. Su formato es: nombre_variable nombre_objeto%TYPE;
 Ejemplo:
 
-	Total Importe€TYPE;
+		Total Importe€TYPE;
 
-	nombre_moroso clientes.nombre%TYPE;
+		nombre_moroso clientes.nombre%TYPE;
 
 + %ROWTYPE: Declara una variable de registro cuyos campos se corresponden con columnas
   de una tabla o vista de la base de datos.
