@@ -136,5 +136,12 @@ Insercción en la vista:
 
 Da error por lo que se crea el siguiente trigger:
 
+	CREATE OR REPLACE TRIGGER t_ges_emplead INSTEAD OF
+  	  DELETE OR
+  	  INSERT OR
+  	  UPDATE ON emplead FOR EACH ROW DECLARE v_dept depart.dept_no%TYPE;
+  	BEGIN
+    	  IF deleting THEN
+          DELETE FROM emple WHERE 
 
 	
