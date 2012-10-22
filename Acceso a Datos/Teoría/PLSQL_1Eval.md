@@ -141,22 +141,33 @@ Da error por lo que se crea el siguiente trigger:
   	  INSERT OR
   	  UPDATE ON emplead FOR EACH ROW DECLARE v_dept depart.dept_no%TYPE;
   	BEGIN
+
     	  IF deleting THEN
+
             /*Si se pretende borrar una fila*/
       	    DELETE FROM emple  WHERE emp_no= :old.emp_no;
+
     	  ELSIF inserting THEN
+
       	    /*Si se pretende insertar una fila*/
       	    SELECT dept_no INTO v_dept FROM depart WHERE depart.dnombre= :new.dnombre AND loc = :new.loc;
       	    INSERT  INTO emple (emp_no,apellido, oficio, dept_no)
        	    VALUES(:new.emp_no,:new.apellido,:new.oficio,v_depart);
+
     	  ELSIF updating('dnombre') THEN
+
       	    SELECT dept_no INTO v_dept FROM depart WHERE dnombre = :new.dnombre;
             UPDATE emple SET dept_no = v_dept WHERE emple_no = :old.emp_no;
+
     	  ELSIF updating('oficio') THEN
+
      	    /*Si se pretende actualizar alguna fila*/
       	    UPDATE emple SET oficio = :new.oficio;
+
     	  ELSE
+
       	    RAISE_APPLICATION_ERROR(-20500,'Error en la actualización');
+
     	  END IF;
   	END;
 	
