@@ -53,13 +53,13 @@ Realizar un programa que aparezcan todas las tablas de multiplicar del o al 10:
 	End Module
 
 
-####While… End While: 
+####While... End While: 
 
 Consiste en repetir una o un grupo de acciones mientras la condición sea verdadera. Para 
 salir de un While se hace de dos formas, cumpliendo la condición del While o poniendo
 Exit While.
 
-####Do… Loop (Loop = Bucle): 
+####Do... Loop (Loop = Bucle): 
 
 Es una estructura repetitiva que tiene cuatro posibles sintaxis:
 
@@ -673,10 +673,54 @@ Module Module1
 End Module
 
 AGREGAR UNA CLASE COMO FICHERO EN UN PROYECTO:
+
 Consiste en seguir los siguientes pasos:
+
 1. Ir a nombre del Proyecto, botón derecho agregar, y luego en clase.
-2. Aparecerá la opción del nombre del fichero, con extensión .vb (fichero de código)
+2. Aparecerá la opción del nombre del fichero, con extensión .vb (fichero de 
+código)
 3. Se abrirá un IDE, donde se escribirá la o las clases
 4. Una vez escrito se guardara.
-Este fichero aparecerá en el explorador de soluciones y podrá ser usado (llamar a todas las clases y métodos), de forma convencional (como siempre), en el programa principal.
 
+Este fichero aparecerá en el explorador de soluciones y podrá ser usado (llamar 
+a todas las clases y métodos), de forma convencional (como siempre), en el 
+programa principal.
+
+
+
+NAMESPACES:
+-----------
+Es un mecanismo que permite organizar, formando espacios independientes todas
+las clases. Se trata de simplificar y organizar a modo de paquetes el acceso a 
+clases, en bloques.
+
++ Son bloques de clases, cada namespace tiene un número de clases a las que se 
+puede acceder, para que sea mas cómodo utilizar las bibliotecas de clase.
+Ejemplo:
+
+	Namespace n1
+
+		Clase1
+			Instrucc
+		End class
+
+		Clase1
+			Instrucc
+		End class
+
+	End namespace
+
+	Namespace n2
+
+		Clase3
+			Instrucc
+		End class
+
+		Clase4
+			Instrucc
+		End class
+
+	End namespace
+
+Es necesario importar el nombre del namespace, para poder utilizarlo, de la misma
+forma que las clases.
